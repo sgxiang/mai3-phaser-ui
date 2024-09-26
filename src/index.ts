@@ -18,10 +18,12 @@ import { TextButton } from "./ui/TextButton";
 import { Toast } from "./ui/Toast";
 import { VolumeSlider } from "./ui/VolumeSlider";
 import { Mai3Plugin } from "./plugins/Mai3Plugin";
+import ObjectFactory from "./plugins/ObjectFactory";
 import { BaseScene, Mai3Game } from "./game";
 import * as Types from "./types";
 import Utils from "./utils";
 import { ListView } from "./ui/ListView";
+import { FlexLayout } from "./ui/FlexLayout";
 
 export {
   BaseScene,
@@ -45,7 +47,9 @@ export {
   Toast,
   VolumeSlider,
   ListView,
+  FlexLayout,
   Mai3Plugin,
+  ObjectFactory,
   Mai3Game,
   Types,
   Utils
@@ -73,7 +77,9 @@ const Mai3 = {
   Toast: Toast,
   VolumeSlider: VolumeSlider,
   ListView: ListView,
+  FlexLayout: FlexLayout,
   Mai3Plugin: Mai3Plugin,
+  ObjectFactory: ObjectFactory,
   Mai3Game: Mai3Game,
   Types: Types,
   Utils: Utils

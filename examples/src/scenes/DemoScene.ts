@@ -47,6 +47,7 @@ export class DemoScene extends BaseScene {
             { name: '按钮演示', scene: 'ButtonDemo', color: 0xCDDC39 },
             { name: '调整大小演示', scene: 'ResizeDemo', color: 0xFF9800 },
             { name: '文本框演示', scene: 'TextBoxDemo', color: 0x8BC34A },
+            { name: 'Flex布局', scene: 'FlexLayoutDemo', color: 0x8BC34A },
         ];
 
         for (let i = 0; i < demoScenes.length; i += 3) {

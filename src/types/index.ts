@@ -415,10 +415,12 @@ export interface FlexLayoutConfig extends BaseConfig {
   borderColor?: number;
   padding?: number;
   space?: number;
-  alignItems?: 'flex-start' | 'flex-end' | 'center' | 'stretch';
-  justifyContent?: 'flex-start' | 'flex-end' | 'center';
-  flexDirection?: 'row' | 'column';
   children?: Container[];
+
+  flexDirection?: 'row' | 'column';
+  flexWrap?: 'nowrap' | 'wrap';
+  justifyContent?: 'flex-start' | 'flex-end' | 'center' | 'space-between' ;
+  alignItems?: 'flex-start' | 'flex-end' | 'center';
 }
 
 export interface GridLayoutConfig extends BaseConfig {

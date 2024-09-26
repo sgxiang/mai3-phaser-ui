@@ -141,6 +141,7 @@ export class Container extends Phaser.GameObjects.Container {
   public onDrag(pointer: Phaser.Input.Pointer, dragX: number, dragY: number): void {
     const [clampedX, clampedY] = this.getClampedPosition(dragX, dragY);
     this.setPosition(clampedX, clampedY);
+    this.setToTop();
     this.onDragUpdate(pointer, this.x, this.y);
   }
 

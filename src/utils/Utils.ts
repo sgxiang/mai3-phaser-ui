@@ -1,4 +1,4 @@
-import { RoundedRectRadius } from "../types";
+import { BaseConfig, FlexLayoutConfig, RoundedRectRadius, GridLayoutConfig } from "../types";
 
 const Horizontal = [0, 'x', 'h', 'horizontal', 'left-to-right'];
 const Vertical = [1, 'y', 'v', 'vertical', 'top-to-bottom'];
@@ -185,7 +185,32 @@ const Utils = {
     });
 
     return timer;
-  }
+  },
+
+  createBg(
+    scene: Phaser.Scene,
+    x: number,
+    y: number,
+    width: number,
+    height: number,
+    config: FlexLayoutConfig | GridLayoutConfig) {
+    if (typeof config.background === 'string' && !config.background.startsWith('#')) {
+        const bg = scene.make.image({ x: 0, y, key: config.background });
+        bg.setDisplaySize(width, height);
+        bg.setOrigin(0);
+        return bg;
+    }
+
+    const backgroundColor = config.background
+        ? ((typeof config.background === 'string' && config.background.startsWith('#')
+            ? Utils.hexColorToNumber(config.background) : config.background as number)) : 0x000000;
+
+    const rt = Utils.drawRoundedRectRenderTexture(scene, x, y,
+        width, height, config.borderWidth,
+        config.radius, config.borderColor, backgroundColor);
+
+    return rt;
+}
 }
 
 export default Utils;
